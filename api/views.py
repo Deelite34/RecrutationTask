@@ -7,6 +7,7 @@ from api.models import ApiUser, TodoItem
 
 class GetCsvApiview(APIView):
     def get(self, request):
+        """ Get request will receive response containing csv file attachment. """
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="data.csv"'
 
