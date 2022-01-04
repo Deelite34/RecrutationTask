@@ -19,7 +19,7 @@ class TodoItem(models.Model):
     """
     Model representing to-do items, each assigned to specific UserData.
     """
-    external_id = models.PositiveIntegerField()  # ID of todo used in external api
+    external_id = models.PositiveIntegerField(unique=True)  # ID of todo used in external api
     owner = models.ForeignKey(ApiUser, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     completed = models.BooleanField()
